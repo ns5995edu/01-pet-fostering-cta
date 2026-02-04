@@ -1,0 +1,83 @@
+/* Base styles: set modern font and neutral page background */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #f4fbfd; /* subtle off-white with cool hint */
+  color: #01303b; /* deep teal for readable body text */
+}
+
+/* CTA banner: tall, visually striking banner using a blue -> teal gradient */
+.cta-banner {
+  min-height: 65vh; /* tall banner */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #0f4471 0%, #0aa3ad 100%);
+  color: #ffffff; /* ensure text is legible on the gradient */
+  text-align: center;
+}
+
+/* Constrain content width so text doesn't span too wide */
+.cta-content {
+  max-width: 840px;
+}
+
+/* Main heading: large and bold to encourage action */
+.cta-title {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.8rem, 4.5vw, 3.6rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Short description explaining the importance of fostering */
+.cta-desc {
+  margin: 0 0 1.4rem;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+/* Button base: accessible, clearly clickable, and eye-catching */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+/* CTA button: bright teal accent that stands out against the banner */
+.btn-cta {
+  background: #00f0d1;
+  color: #01303b;
+  box-shadow: 0 8px 18px rgba(0, 160, 140, 0.18);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Hover and focus states to provide affordance */
+.btn-cta:hover,
+.btn-cta:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 160, 140, 0.22);
+  outline: none;
+}
+
+/* Focus ring for keyboard accessibility */
+.btn:focus {
+  box-shadow: 0 0 0 4px rgba(0, 160, 140, 0.12);
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 480px) {
+  .cta-title { font-size: 1.6rem; }
+  .cta-desc { font-size: 0.98rem; }
+  .btn { padding: 0.75rem 1.2rem; }
+}
